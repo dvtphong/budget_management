@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Fiscal Year{% endblock %}
+
+{% block content %}
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Delete Fiscal Year</h6>
+    </div>
+    <div class="card-body">
+        <p>Are you sure you want to delete "{{ fiscal_year.name }}"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Confirm Delete</button>
+            <a href="{% url 'fiscal_year:list' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %} 
